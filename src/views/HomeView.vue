@@ -14,10 +14,11 @@
                       <img :src="product.picture" class="card-img-top" :style="product.estilo" />
                       <div class="card-body">
                           <h5 class="card-title">{{product.title}}</h5>
+                          <p class="card-text">{{product.description}}</p>
                           <h5 class="card-title" style="position: absolute; bottom: 45px; left: 40%; font-weight: bold">{{product.price | formatPrecio}}</h5>
                           <div class="container-fluid">
                               <div style=" display: flex; justifyContent: center ">
-                                  <button class="botonAgregarCarrito" style="position: absolute; bottom: 0; width: 100%; border-radius: 0">Ver Detalle</button>
+                                  <button class="botonAgregarCarrito" style="position: absolute; bottom: 0; width: 100%; border-radius: 0">Agregar al Carrito</button>
                               </div>
                           </div>
                       </div>
@@ -32,38 +33,98 @@
 import productsData from "./productos.json";
 
 export default {
-    name: 'HomeView',
-    data() {
-        return {
-        products: productsData,
-        };
+  name: "HomeView",
+  data() {
+    return {
+      products: productsData,
+      number: 0,
+    };
+  },
+  methods: {
+    onIncrement(){
+      this.number++
     },
+    onDecrement(){
+      if(this.number > 1){
+        this.number--
+      } 
+    },
+  }
 };
+
 </script>
 
 <style scoped>
-  .botonAgregarCarrito{
-    width: 401px; 
-    font-size: 15px; 
-    background-color: #c47500; 
-    color: white; 
-    padding-top: 5px; 
-    padding-bottom: 5px; 
-    border: 1px solid #c47500;
-    border-radius: 5px; 
-    outline: none; 
-    cursor: pointer; 
-    letter-spacing: 2px;
-    font-family: 'Poppins';
-  }
+.botonAgregarCarrito {
+  width: 401px;
+  font-size: 15px;
+  background-color: #c47500;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #c47500;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: "Poppins";
+}
 
-  .botonAgregarCarrito:focus{
-    outline: none;
-  }
+.botonAgregarCarrito:focus {
+  outline: none;
+}
 
-  h1{
+h1 {
   margin: 30px 0px 0px 0px;
   font-size: 30px;
   font-weight: bold;
 }
+
+.card-title{
+  font-weight: 900;
+}
+
+.decre{
+    width: 50px; 
+    font-size: 20px;
+    font-weight: bold; 
+    background-color: white; 
+    border: 2px solid lightgray; 
+    border-right: none; 
+    outline: none; 
+    cursor: pointer; 
+    color: #c47500; 
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+  }
+
+  .incre{
+    width: 50px; 
+    font-size: 20px; 
+    font-weight: bold; 
+    background-color: white; 
+    border: 2px solid lightgray; 
+    border-left: none; 
+    outline: none; 
+    cursor: pointer; 
+    color: #c47500; 
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+  }
+
+  .inputValor{
+    width: 140px; 
+    font-size: 20px; 
+    text-align: center; 
+    outline: none; 
+    border: 2px solid lightgray; 
+    border-left: none; 
+    border-right: none; 
+    padding-top: 6px; 
+    padding-bottom: 4px;
+  }
 </style>

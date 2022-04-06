@@ -40,7 +40,7 @@
   {
     "id": 6,
     "picture": "../Chocobreak.png",
-    "estilo": {"padding-left": "30px", "padding-right": "30px", "height": "70%", "margin-top": "10px"},
+    "estilo": {"padding-left": "10px", "padding-right": "10px", "height": "40%", "margin-top": "10px"},
     "title": "Paquete Chocobreak",
     "description": "Elaborados a partir de extracto de cacao fresco y seleccionado, junto a un relleno cremoso de sabores frutales para crear un snack listo para disfrutar en familia o con amigos, Choco Break Rellenos Surtidos en su presentación de empaque con 30 unidades es perfecto para consumidores que buscan darle un toque de sabor único y delicioso a su rutina diaria.",
     "price": 7000
